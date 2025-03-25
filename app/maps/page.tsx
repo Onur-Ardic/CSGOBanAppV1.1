@@ -169,13 +169,22 @@ export default function MapSelection() {
 
         {currentStep >= steps.length && (
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            style={{ marginTop: "2rem", textAlign: "center" }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="bg-white p-8 rounded-xl shadow-lg max-w-md w-full"
+            {...({
+              className: "bg-white p-8 rounded-xl shadow-lg max-w-md w-full",
+            } as any)}
           >
-            <h2 className="text-2xl font-bold mb-4">
-              Harita Seçimi Tamamlandı
-            </h2>
+            <h1 className="text-3xl font-bold text-center mb-8">
+              CSGO Map Picker
+            </h1>
+            <div style={{ marginTop: "2rem", textAlign: "center" }}>
+              <h2 className="text-2xl font-bold mb-4">
+                Harita Seçimi Tamamlandı
+              </h2>
+            </div>
+
             <button
               className="btn btn-primary"
               onClick={() => {
