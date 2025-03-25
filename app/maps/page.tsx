@@ -169,9 +169,6 @@ export default function MapSelection() {
 
         {currentStep >= steps.length && (
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="bg-white p-8 rounded-xl shadow-lg max-w-md w-full"
             {...({
               className: "bg-white p-8 rounded-xl shadow-lg max-w-md w-full",
             } as any)}
