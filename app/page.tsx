@@ -34,6 +34,9 @@ export default function Home() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         className="bg-white p-8 rounded-xl shadow-lg max-w-md w-full"
+        {...({
+          className: "bg-white p-8 rounded-xl shadow-lg max-w-md w-full",
+        } as any)}
       >
         <h1 className="text-3xl font-bold text-center mb-8">CSGO Map Picker</h1>
 
@@ -77,6 +80,7 @@ export default function Home() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               className="text-red-500 text-sm text-center"
+              {...({ className: "text-red-500 text-sm text-center" } as any)}
             >
               {error}
             </motion.p>
@@ -87,6 +91,10 @@ export default function Home() {
             whileTap={{ scale: 0.98 }}
             onClick={handleStart}
             className="btn btn-primary w-full mt-4"
+            {...({
+              onClick: handleStart,
+              className: "btn btn-primary w-full mt-4",
+            } as any)}
           >
             Başla
           </motion.button>
