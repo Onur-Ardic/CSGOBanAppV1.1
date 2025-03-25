@@ -99,8 +99,12 @@ export default function SideSelection() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="side-btn t-btn relative overflow-hidden"
+              className="side-btn t-btn relative overflow-hidden cursor-pointer"
               onClick={() => handleSideSelect("T")}
+              {...({
+                className:
+                  "side-btn t-btn relative overflow-hidden cursor-pointer",
+              } as any)}
             >
               <Image
                 src="/tside.webp"
@@ -116,8 +120,12 @@ export default function SideSelection() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="side-btn ct-btn relative overflow-hidden"
+              className="side-btn ct-btn relative overflow-hidden cursor-pointer"
               onClick={() => handleSideSelect("CT")}
+              {...({
+                className:
+                  "side-btn ct-btn relative overflow-hidden cursor-pointer",
+              } as any)}
             >
               <Image
                 src="/ctside.jpg"
@@ -137,6 +145,7 @@ export default function SideSelection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             className="mt-12 text-center"
+            {...({ className: "mt-12 text-center" } as any)}
           >
             <h2 className="text-2xl font-bold mb-4">Side Seçimi Tamamlandı</h2>
             <div className="space-y-4">

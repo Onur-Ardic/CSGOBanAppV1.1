@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, HTMLMotionProps } from "framer-motion";
+
 import { useRouter } from "next/navigation";
 
 interface Map {
@@ -133,11 +134,14 @@ export default function MapSelection() {
           {maps.map((map) => (
             <motion.div
               key={map.id}
-              className={`map-card ${map.status}`}
+              className={`map-card ${map.status} cursor-pointer`}
               whileHover={map.status === "available" ? { scale: 1.05 } : {}}
               onClick={() =>
                 map.status === "available" && handleMapClick(map.id)
               }
+              {...({
+                className: `map-card ${map.status} cursor-pointer`,
+              } as any)}
             >
               <div className="aspect-video relative overflow-hidden rounded-lg">
                 <img
@@ -167,7 +171,7 @@ export default function MapSelection() {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="mt-8 text-center"
+            style={{ marginTop: "2rem", textAlign: "center" }}
           >
             <h2 className="text-2xl font-bold mb-4">
               Harita Seçimi Tamamlandı
