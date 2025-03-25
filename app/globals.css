@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-rgb: 255, 255, 255;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+  min-height: 100vh;
+}
+
+@layer components {
+  .map-card {
+    @apply relative overflow-hidden rounded-lg shadow-lg transition-all duration-300;
+  }
+
+  .map-card.banned {
+    @apply grayscale;
+  }
+
+  .map-card.picked {
+    @apply ring-4 ring-green-500;
+  }
+
+  .team-input {
+    @apply w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500;
+  }
+
+  .btn {
+    @apply px-6 py-2 rounded-lg font-semibold transition-all duration-300;
+  }
+
+  .btn-primary {
+    @apply bg-blue-500 text-white hover:bg-blue-600;
+  }
+
+  .side-btn {
+    @apply btn w-32 h-32 flex items-center justify-center text-xl;
+  }
+
+  .ct-btn {
+    @apply bg-ct-side text-white hover:bg-blue-700;
+  }
+
+  .t-btn {
+    @apply bg-t-side text-white hover:bg-red-700;
+  }
+}
